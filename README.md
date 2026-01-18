@@ -1,6 +1,7 @@
-1. Запуск:
+1. Як запустити?
 
 pip install fastapi uvicorn sqlalchemy pydantic (PowerShell)
+
 python -m uvicorn main:app --reload (PoweShell)
 
 2. Як вирішено конфлікт бронювань? 
