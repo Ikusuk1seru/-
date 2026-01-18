@@ -1,12 +1,13 @@
-0. Запуск:
+1. Запуск:
+
 pip install fastapi uvicorn sqlalchemy pydantic (PowerShell)
 python -m uvicorn main:app --reload (PoweShell)
 
-1. Як вирішено конфлікт бронювань? 
+2. Як вирішено конфлікт бронювань? 
 
 Я використав стандартну логіку перетину інтервалів на рівні SQL-запиту. Умова перетину двох відрізків часу [StartA, EndA] та [StartB, EndB] виглядає так: StartA < EndB AND EndA > StartB. Я додав це в filter SQLAlchemy разом із перевіркою status == 'active', щоб ігнорувати скасовані бронювання. Це гарантує атомарність перевірки та цілісність даних.
 
-2. Як працює Availability? 
+3. Як працює Availability? 
 
 Алгоритм працює наступним чином:
 
